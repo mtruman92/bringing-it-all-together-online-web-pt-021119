@@ -70,4 +70,9 @@ end
    new_dog = self.new(id: id, name: name, breed: breed)
    new_dog
  end
+ 
+ def update 
+   sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+   DB[:conn].execute(sql, self.name, self.breed, self.id)
+ end
 end
